@@ -1,3 +1,8 @@
+"""Purpose: Converts a table I grabbed from a Pokemon wiki and put in an excel file to a  csv with a cleaner format"""
+"""Output: csv file with two columns: Pokemon A, Pokemon A's evolution(s)"""
+"""        The output csv contains a row for every single pokemon that has one or more evolution"""
+"""        The second column for pokemon with more than one evolution is formatted like this: "Evo1,Evo2,Evo3,..."""
+
 import csv
 
 
