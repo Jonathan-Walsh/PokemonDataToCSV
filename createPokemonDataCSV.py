@@ -19,6 +19,9 @@ def CreatePokemonCSV(evoDataDict):
 	oldFile = open("pokemon.txt", 'r')
 	writer = csv.writer(newFile)
 
+	header = ["Identifier", "Name", "Dark Threshold", "Type", "Secondary Type", "Evolutions"]
+	writer.writerow(header)
+
 	for i, line in enumerate(oldFile):
 		identifier = int(i) + 1
 		pkmnData = line.strip().split()
@@ -27,7 +30,6 @@ def CreatePokemonCSV(evoDataDict):
 		type1 = pkmnData[2]
 		type2 = pkmnData[3] if len(pkmnData) >= 4 else ""
 		evos = evoDataDict[name] if name in evoDataDict.keys() else ""
-		print(name in evoDataDict.keys(), name)
 		writer.writerow([identifier, name, darkThreshold, type1, type2, evos])
 	oldFile.close()
 	newFile.close()
