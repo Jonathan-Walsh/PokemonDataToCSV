@@ -24,7 +24,7 @@ def main():
 					evos.append(completedRows[i][1])
 				i += 1
 			if (first not in (None, "") and len(evos) > 0):
-				writer.writerow([first, ToStr(evos)])
+				writer.writerow([first.lower(), ToStr(evos)])
 		j = 0
 		while (j < len(completedRows)):
 			second = completedRows[j][1]
@@ -34,16 +34,16 @@ def main():
 					evos.append(completedRows[j][2])
 				j += 1
 			if (second not in (None, "") and len(evos) > 0):
-				writer.writerow([second, ToStr(evos)])
+				writer.writerow([second.lower(), ToStr(evos)])
 									
 			
 def ToStr(evos):
 	evoStr = ""
 	i = 0
 	while (i < len(evos) - 1):
-		evoStr += evos[i] + ','
+		evoStr += evos[i].lower() + ','
 		i += 1
-	evoStr += evos[len(evos) - 1]
+	evoStr += evos[len(evos) - 1].lower()
 	return evoStr
 
 main();
